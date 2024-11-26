@@ -7,14 +7,14 @@ Created on Sat Nov  2 14:37:41 2024
 
 # Create configuration
 import yaml
-config = {'path': 'G:\\phd\\resume\\footfall\\object detection',
-         'train': 'G:\\phd\\resume\\footfall\\object detection\\train',
-         'val': 'G:\\phd\\resume\\footfall\\object detection\\valid',
-         'test': 'G:\\phd\\resume\\footfall\\object detection\\test',
+config = {'path': 'G:\\object detection',
+         'train': 'G:\object detection\\train',
+         'val': 'G:\\object detection\\valid',
+         'test': 'G:\\object detection\\test',
          'nc': 1,
          'names': ['Tag']}
  
-with open("G:\\phd\\resume\\footfall\\object detection\\data.yaml", "w") as file:
+with open("G:\\object detection\\data.yaml", "w") as file:
    yaml.dump(config, file, default_flow_style=False)
    
    
@@ -39,7 +39,7 @@ torch.cuda.empty_cache()
 
 train.run(imgsz = 224,
                  batch=1, epochs=15, 
-                 data="interview_footfall.yaml",
+                 data="footfall.yaml",
                  #weights='yolov5m.pt',
                  weights='',
                  cfg='yolov5n.yaml',
