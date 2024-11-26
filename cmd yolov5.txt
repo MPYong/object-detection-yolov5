@@ -1,0 +1,8 @@
+To train model:
+python train.py --imgsz 640 --data interview_footfall.yaml --epochs 15 --weights yolov5n.pt --cfg yolov5n.yaml  --batch-size 1 --device 0
+
+To get output image:
+python detect.py --imgsz 640 --source "../object detection/test/images" --weights "runs/train/yolov5 640/weights/best.pt" --name footfall_test_det --device 0
+
+To get performance metrics:
+python val.py --imgsz 640 --batch-size 1 --data interview_footfall.yaml --weights "runs/train/yolov5 640/weights/best.pt" --task test --name footfall_test_metrics  --device 0
